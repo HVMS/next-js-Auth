@@ -6,7 +6,11 @@ import { redirect } from "next/navigation";
 export default function Admin() {
     const { data: session } = useSession();
     if (session === null) {
+        console.log("Redirecting to login page");
+        console.log(session);
         redirect("/login");
+    } else {
+        console.log(session);
     }
 
     return (
